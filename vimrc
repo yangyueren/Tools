@@ -1,3 +1,6 @@
+# F9 is to normal paste
+# set mouse=r is to copy
+
 set ts=4
 set expandtab
 set autoindent
