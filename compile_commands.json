@@ -1,3 +1,6 @@
 # cd build
 # cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=True ..
 
+--completion-style=detailed
+--compile-commands-dir=${workspaceFolder}/build
+--header-insertion=never
