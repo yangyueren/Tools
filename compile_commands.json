@@ -1,6 +1,11 @@
+# CMakeLists.txt
+set(CMAKE_EXPORT_COMPILECOMMANDS ON)
+
 # cd build
 # cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=True ..
 
+
+# cofigure clangd
 --completion-style=detailed
 --compile-commands-dir=${workspaceFolder}/build
 --header-insertion=never
