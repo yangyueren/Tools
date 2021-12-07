@@ -1,6 +1,11 @@
 install clangdb
 sudo apt-get install clangd-9
 
+配置vscode的setting.json，让其找得到clangd：Ctrl+Shift+P ，然后搜索setting
+{
+    "clangd.path": "/usr/lib/llvm-8/bin/clangd",
+}
+
 
 # CMakeLists.txt
 set(CMAKE_EXPORT_COMPILECOMMANDS ON)
