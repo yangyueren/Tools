@@ -1,0 +1,19 @@
+docker create -t -i --name bustub -p 8027:22 bustub /bin/bash
+docker start -a -i bustub
+
+
+apt-get install -y openssh-server
+/etc/init.d/ssh start
+
+apt install vim
+apt install sudo
+adduser bustub
+
+
+修改 /etc/sudoers 文件，找到下面一行，在root下面添加一行，如下所示：
+## Allow root to run any commands anywhere
+root    ALL=(ALL)     ALL
+bustub   ALL=(ALL)     ALL
+
+su bustub
+ssh-keygen -t rsa -C "yangyueren@outlook.com"
