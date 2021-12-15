@@ -17,3 +17,8 @@ bustub   ALL=(ALL)     ALL
 
 su bustub
 ssh-keygen -t rsa -C "yangyueren@outlook.com"
+
+
+sudo update-alternatives --config gcc
+dpkg -l | grep gcc
+sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-9 90 --slave /usr/bin/g++ g++ /usr/bin/g++-9
