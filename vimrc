@@ -9,6 +9,8 @@ set backspace=2
 set number
 set paste
 
+" curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
 call plug#begin()
 Plug 'preservim/NERDTree'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
