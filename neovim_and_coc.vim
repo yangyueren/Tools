@@ -56,3 +56,32 @@ https://github.com/neoclide/coc.nvim
 :CocInstall coc-yaml   # yaml
 :CocInstall coc-syntax
 :CocInstall coc-pairs
+
+
+
+pip install jedi-language-server
+CocConfig
+
+```
+{
+  "jedi.enable": true,
+  "jedi.startupMessage": true,
+  "jedi.markupKindPreferred": "plaintext",
+  "jedi.trace.server": true,
+  "jedi.jediSettings.autoImportModules": [],
+  "jedi.executable.command": "jedi-language-server",
+  "jedi.executable.args": [],
+  "jedi.completion.disableSnippets": false,
+  "jedi.diagnostics.enable": true,
+  "jedi.diagnostics.didOpen": true,
+  "jedi.diagnostics.didChange": true,
+  "jedi.diagnostics.didSave": true,
+  "jedi.workspace.extraPaths": [],
+  "python.linting.flake8Enabled": true,
+  "python.linting.enabled": true,
+  "jedi.jediSettings.autoImportModules": ["numpy", "pandas"],
+  "diagnostic-languageserver.filetypes": {
+    "python": "flake8"
+  },
+  
+ ```
