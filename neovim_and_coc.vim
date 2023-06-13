@@ -1,3 +1,4 @@
+sudo apt install software-properties-common
 sudo add-apt-repository ppa:neovim-ppa/stable
 sudo apt-get update
 sudo apt-get install neovim
@@ -5,6 +6,8 @@ sudo apt-get install neovim
 # lastest neovim
 
 sudo apt remove neovim -y
+
+wget https://github.com/neovim/neovim/releases/download/v0.9.1/nvim-linux64.tar.gz
 
 # vimplug
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
