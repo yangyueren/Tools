@@ -15,6 +15,7 @@ Plug 'honza/vim-snippets'
 " Plug 'windwp/nvim-autopairs'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+Plug 'ojroques/vim-oscyank', {'branch': 'main'}
 call plug#end()
 
 
@@ -438,5 +439,12 @@ nnoremap <F3> :NERDTreeToggle<CR> " 开启/关闭nerdtree快捷键
 " fzf
 map <leader>p :Files<CR>
 map <leader>b :Buffers<CR>
+
+
+" vim-oscyank
+" in .tmux.conf : set -s set-clipboard on
+nmap <leader>c <Plug>OSCYankOperator
+nmap <leader>cc <leader>c_
+vmap <leader>c <Plug>OSCYankVisual
 
 
