@@ -9,6 +9,7 @@
 " uncomment: <leader>+cu
 " jump to defination: gd
 " jump back: <C>+o
+" save: norm mode <leader>+sa
 
 
 call plug#begin('~/.vim/plugged')
@@ -456,5 +457,7 @@ map <leader>b :Buffers<CR>
 nmap <leader>c <Plug>OSCYankOperator
 nmap <leader>cc <leader>c_
 vmap <leader>c <Plug>OSCYankVisual
+
+nmap <leader>sa :w<CR>
 
 
