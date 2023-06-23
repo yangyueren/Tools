@@ -1,4 +1,5 @@
 # .config/nvim/coc-settings.json
+# "diagnostic.checkCurrentLine": true  show error when curson in this line
 
 {
   "jedi.enable": true,
@@ -20,5 +21,6 @@
   "diagnostic-languageserver.filetypes": {
     "python": "flake8"
   },
-  "suggest.noselect": false
+  "suggest.noselect": false,
+  "diagnostic.checkCurrentLine": true
 }
