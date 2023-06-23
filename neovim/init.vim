@@ -1,6 +1,7 @@
 " .config/nvim/init.vim
 
 " for short:
+" leader is space
 " copy&paste visual + <leader>+c
 " buffer quit: :bd
 " buffer search: <leader>+b
@@ -9,7 +10,7 @@
 " uncomment: <leader>+cu
 " jump to defination: gd
 " jump back: <C>+o
-" save: norm mode <leader>+sa
+" save: norm mode <leader>+l
 
 
 call plug#begin('~/.vim/plugged')
@@ -458,7 +459,7 @@ nmap <leader>c <Plug>OSCYankOperator
 nmap <leader>cc <leader>c_
 vmap <leader>c <Plug>OSCYankVisual
 
-nmap <leader>sa :w<CR>
+nmap <leader>l :w<CR>
 
 " insert mode shortcut
 inoremap <C-h> <Left>
