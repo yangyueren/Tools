@@ -1,5 +1,13 @@
 " .config/nvim/init.vim
 
+" for short:
+" copy&paste visual + <leader>+c
+" buffer quit: :bd
+" buffer search: <leader>+b
+" fzf search: <leader>+p
+" comment: <leader>+cb
+" uncomment: <leader>+cu
+
 
 call plug#begin('~/.vim/plugged')
 Plug 'Yggdroot/indentLine'
