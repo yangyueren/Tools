@@ -468,4 +468,10 @@ inoremap <C-k> <Up>
 inoremap <C-l> <Right>
 inoremap <C-d> <DELETE>
 
+:map <C-f> <Right>
+inoremap <C-f> <Right>
+:map <C-b> <Left>
+inoremap <C-b> <Left>
+
+
 
