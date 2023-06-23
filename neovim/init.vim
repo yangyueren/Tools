@@ -7,6 +7,8 @@
 " fzf search: <leader>+p
 " comment: <leader>+cb
 " uncomment: <leader>+cu
+" jump to defination: gd
+" jump back: <C>+o
 
 
 call plug#begin('~/.vim/plugged')
