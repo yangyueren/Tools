@@ -460,4 +460,11 @@ vmap <leader>c <Plug>OSCYankVisual
 
 nmap <leader>sa :w<CR>
 
+" insert mode shortcut
+inoremap <C-h> <Left>
+inoremap <C-j> <Down>
+inoremap <C-k> <Up>
+inoremap <C-l> <Right>
+inoremap <C-d> <DELETE>
+
 
