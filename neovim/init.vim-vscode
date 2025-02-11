@@ -1,0 +1,183 @@
+" .config/nvim/init.vim
+" for short:
+" leader is space
+" copy&paste visual + <leader>+c
+" buffer quit: :bd
+" buffer search: <leader>+b
+" fzf search: <leader>+p
+" comment: <leader>+cb
+" uncomment: <leader>+cu
+" jump to defination: gd
+" jump back: <C>+o
+" save: norm mode <leader>+l
+
+if exists('g:vscode')
+    " VSCode extension
+else
+    " ordinary Neovim
+endi
+
+
+call plug#begin('~/.vim/plugged')
+Plug 'scrooloose/nerdcommenter'
+Plug 'preservim/nerdtree'
+Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'octol/vim-cpp-enhanced-highlight'
+Plug 'MattesGroeger/vim-bookmarks'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+call plug#end()
+
+
+" 设置 leader 键，例子为空号键，也可以设置为其他的 默认为"/"
+let mapleader=" "
+
+filetype plugin on
+" set ambiwidth=double
+" set t_ut= "
+set showmatch " highlight for matched parentheses
+set matchtime=1 " match time for parentheses
+set noshowmode "do not show edit mode in cmd
+set novisualbell
+set noerrorbells
+set report=0
+set ignorecase " ignore case when searching
+set nobackup
+set autoread
+set nocompatible
+set backspace=2
+set showcmd
+set hlsearch
+syntax on
+
+" Tab settings
+set ts=4
+set softtabstop=4
+set shiftwidth=4
+set expandtab
+
+" indent method
+" set cindent
+set smartindent
+
+" Set Mouse
+set mouse+=a
+" set selection=exclusive
+" set selectmode=mouse,key
+
+set history=1000 "设置历史记录条数
+" close welcome page
+set shortmess=atI
+set clipboard+=unnamed
+
+" VIM Encoding Method
+set encoding=utf-8
+set fileencodings=utf-8,ucs-bom,gb18030,gbk,gb2312,cp936,latin1
+" set fileencoding=gb2312
+set fileencoding=utf-8
+set termencoding=utf-8
+
+set signcolumn=yes
+set cmdheight=1
+set ruler
+set nu
+set cursorline
+
+" reset cursor when vim exits
+" au VimLeave * set guicursor=a:ver25-blinkon0
+set foldmethod=indent
+set foldlevelstart=99 " set close fold at start
+
+
+" nerdcommenter
+
+"add spaces after comment delimiters by default
+let g:NERDSpaceDelims = 1
+" python 自动的会多加一个空格
+au FileType python let g:NERDSpaceDelims = 0
+
+" Use compact syntax for prettified multi-line comments
+let g:NERDCompactSexyComs = 1
+
+" Align line-wise comment delimiters flush left instead of following code indentation
+let g:NERDDefaultAlign = 'left'
+
+" Set a language to use its alternate delimiters by default
+let g:NERDAltDelims_java = 1
+
+" Add your own custom formats or override the defaults
+" let g:NERDCustomDelimiters = { 'c': { 'left': '/**','right': '*/' } }
+
+" Allow commenting and inverting empty lines (useful when commenting a region)
+let g:NERDCommentEmptyLines = 1
+
+" Enable trimming of trailing whitespace when uncommenting
+let g:NERDTrimTrailingWhitespace = 1
+
+" Enable NERDCommenterToggle to check all selected lines is commented or not
+let g:NERDToggleCheckAllLines = 1
+
+
+
+
+
+
+
+
+
+" nerdtree
+" autocmd vimenter * NERDTree  "自动开启Nerdtree
+let g:NERDTreeWinSize = 25 "设定 NERDTree 视窗大小
+let NERDTreeShowBookmarks=1  " 开启Nerdtree时自动显示Bookmarks
+"打开vim时如果没有文件自动打开NERDTree
+" autocmd vimenter * if !argc()|NERDTree|endif
+"当NERDTree为剩下的唯一窗口时自动关闭
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+" 设置树的显示图标
+let g:NERDTreeDirArrowExpandable = '+'
+let g:NERDTreeDirArrowCollapsible = '-'
+let NERDTreeIgnore = ['\.pyc$']  " 过滤所有.pyc文件不显示
+let g:NERDTreeShowLineNumbers=0 " 是否显示行号
+let g:NERDTreeHidden=0     "不显示隐藏文件
+""Making it prettier
+let NERDTreeMinimalUI = 1
+let NERDTreeDirArrows = 1
+nnoremap <F3> :NERDTreeToggle<CR> " 开启/关闭nerdtree快捷键
+
+
+
+
+
+
+" nvim-autopairs
+" lua << EOF
+" require("nvim-autopairs").setup {}
+" EOF
+
+
+
+
+" fzf
+map <leader>p :Files<CR>
+map <leader>b :Buffers<CR>
+
+
+" vim-oscyank
+" in .tmux.conf : set -s set-clipboard on
+nmap <leader>c <Plug>OSCYankOperator
+nmap <leader>cc <leader>c_
+vmap <leader>c <Plug>OSCYankVisual
+
+nmap <leader>l :w<CR>
+
+" insert mode shortcut
+inoremap <C-h> <Left>
+inoremap <C-j> <Down>
+inoremap <C-k> <Up>
+inoremap <C-l> <Right>
+inoremap <C-d> <DELETE>
+
+:map <C-f> <Right>
+inoremap <C-f> <Right>
+:map <C-b> <Left>
+inoremap <C-b> <Left>
