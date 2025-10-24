@@ -1,0 +1,8 @@
+# cat .vscode/settings.json
+# only enable neovim on remote ssh machine
+{
+    "rust-analyzer.checkOnSave": false,
+    "remote.extensionKind": {
+        "asvetliakov.vscode-neovim": ["workspace"]
+    }
+}
